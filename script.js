@@ -3,7 +3,7 @@ const profileButtonEdit = document.querySelector('.profile__button-edit');
 const popupClos = popupEdit.querySelector('.popup__close');
 let formElement = document.querySelector(".popup__form");
 let nameInput = document.querySelector(".popup__input-name");
-let jobInput = document.querySelector(".popup__input_user_Job");
+let jobInput = document.querySelector(".popup__input-name_type_user-job");
 let card = document.querySelector('.card');
 let popupButton = document.querySelector('.popup__button');
 
