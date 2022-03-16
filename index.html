@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="vendor/fonts.css">
+  <link rel="stylesheet" href="vendor/normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Mesto</title>
+</head>
+
+<body class="body">
+
+  <header class="header">
+    <img class="header__logo" src="images/Vector .svg" alt="Лого">
+    <hr class="line">
+
+  </header>
+
+  <main class="page">
+    <section class="profile">
+      <img class="profile__image" src="images/image.jpg" alt="Аватарка">
+       <div class="profile__conteiner">
+      <div class="profile__info">
+        <p class="profile__title">Жак-Ив Кусто</p>
+        <button class="profile__button-edit" type="button">
+
+        </button>
+        <p class="profile__subtitle">Исследователь океана</p>
+      </div>
+      <button class="profile__button-full">
+
+      </button>
+    </div>
+
+      <div class="popup popup-edit">
+        <div class="popup__container">
+          <button class="popup__close" type="button"></button>
+          <div class="popup__content">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form">
+              <input type="text" placeholder="Имя" class="popup__input-name popup__input_user_name imput_active">
+              <input type="text" placeholder="Деятельность" class="popup__input-name popup__input_user_Job imput_active">
+            </form>
+            <button class="popup__button" type="submit">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <img class="card__image" src="images/kirill-pershin-1088404-unsplash (1).jpg" alt="Замок">
+        <div class="card__conteiner">
+        <h2 class="card__title">Карачаевск</h2>
+        <button class="cards__button" type="submit"><img class="like" src="images/Group (1).svg" alt="лайк"></button>
+      </div>
+      </div>
+
+      <div class="card">
+        <img class="card__image" src="images/kirill-pershin-1088404-unsplash (1).jpg" alt="Замок">
+        <div class="card__conteiner">
+        <h2 class="card__title">Гора Эльбрус</h2>
+        <button class="cards__button" type="submit"><img class="like" src="images/like.svg" alt="лайк"></button>
+      </div>
+      </div>
+
+      <div class="card">
+        <img class="card__image" src="images/kirill-pershin-1088404-unsplash (1).jpg" alt="Замок">
+        <div class="card__conteiner">
+        <h2 class="card__title">Домбай</h2>
+        <button class="cards__button" type="submit"><img class="like" src="images/like.svg" alt="лайк"></button>
+      </div>
+      </div>
+
+      <div class="card">
+        <img class="card__image" src="images/kirill-pershin-1088404-unsplash (1).jpg" alt="Замок">
+        <div class="card__conteiner">
+        <h2 class="card__title">Карачаевск</h2>
+        <button class="cards__button" type="submit"><img class="like" src="images/like.svg" alt="лайк"></button>
+      </div>
+      </div>
+
+      <div class="card">
+        <img class="card__image" src="images/kirill-pershin-1088404-unsplash (1).jpg" alt="Замок">
+        <div class="card__conteiner">
+        <h2 class="card__title">Карачаевск</h2>
+        <button class="cards__button" type="submit"><img class="like" src="images/like.svg" alt="лайк"></button>
+      </div>
+      </div>
+
+      <div class="card">
+        <img class="card__image" src="images/kirill-pershin-1088404-unsplash (1).jpg" alt="Замок">
+        <div class="card__conteiner">
+        <h2 class="card__title">Карачаевск</h2>
+        <button class="cards__button" type="submit"><img class="like" src="images/like.svg" alt="лайк"></button>
+      </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">© 2022 Mesto Russia</p>
+  </footer>
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
