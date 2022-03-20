@@ -14,7 +14,6 @@
 
   <header class="header">
     <img class="header__logo" src="images/Vector.svg" alt="Лого">
-    <hr class="line">
   </header>
 
   <main class="page">
@@ -22,7 +21,7 @@
       <img class="profile__image" src="images/image.jpg" alt="Аватарка">
        <div class="profile__conteiner">
       <div class="profile__info">
-        <p class="profile__title">Жак-Ив Кусто</p>
+        <h1 class="profile__title">Жак-Ив Кусто</h1>
         <button class="profile__button-edit" type="button"></button>
         <p class="profile__subtitle">Исследователь океана</p>
       </div>
@@ -33,10 +32,10 @@
 
           <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form">
+            <form class="popup__form" name="register">
               <button class="popup__close" type="button"></button>
-              <input type="text" placeholder="Имя" class="popup__input-name">
-              <input type="text" placeholder="Деятельность" class="popup__input-name popup__input-name_type_user-job">
+              <input type="text" placeholder="Имя" class="popup__input-name" name="username">
+              <input type="text" placeholder="Деятельность" class="popup__input-name popup__input-name_type_user-job" name="userjob">
               <button class="popup__button" type="submit">Сохранить</button>
             </form>
           </div>
