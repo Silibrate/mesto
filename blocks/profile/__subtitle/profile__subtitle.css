@@ -4,6 +4,7 @@
   grid-column-start: 1;
   grid-column-end: 3;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media screen and (max-width:320px) {
@@ -12,7 +13,8 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
-    margin-left: 28px;
     margin-top: 4px;
+    margin-left: 28px;
+    grid-column-end: 2;
   }
 }
