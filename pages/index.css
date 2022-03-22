@@ -5,8 +5,8 @@
 @import url('../blocks/cards/cards.css');
 @import url('../blocks/card/card.css');
 @import url('../blocks/card/__button/card__button.css');
-@import url('../blocks/card/__button/__button_off/card__button_off.css');
-@import url('../blocks/card/__button/__button_on/card__button_on.css');
+@import url('../blocks/card/__button/_type/card__button_type_close.css');
+@import url('../blocks/card/__button/_type/card__button_type_on.css');
 @import url('../blocks/card/__conteiner/card__conteiner.css');
 @import url('../blocks/card/__image/card__image.css');
 @import url('../blocks/card/__title/card__title.css');
