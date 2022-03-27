@@ -27,9 +27,9 @@
       </div>
       <button class="profile__button-full"></button>
     </div>
+
       <div class="popup popup-edit">
         <div class="popup__container">
-
           <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form" name="register">
@@ -41,57 +41,32 @@
           </div>
         </div>
       </div>
+
+      <div class="popup popup-add">
+        <div class="popup__container">
+          <div class="popup__content">
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form" name="register">
+              <button class="popup__close popup__close_add" type="button"></button>
+              <input type="text" placeholder="Название" class="popup__input-title" name="username">
+              <input type="text" placeholder="Ссылка на картинку" class="popup__input-title popup__input-name_type_link" name="userjob">
+              <button class="popup__button" type="submit">Сохранить</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="cards">
+    <template class="cards">
       <div class="card">
-        <img class="card__image" src="images/zamok.jpg" alt="Замок">
+        <img class="card__image" src="images/zamok.jpg" alt="crash">
         <div class="card__conteiner">
-        <h2 class="card__title">Карачаевск</h2>
+        <h2 class="card__title"></h2>
         <button class="card__button card__button_type_close" type="submit"></button>
       </div>
       </div>
+    </template>
 
-      <div class="card">
-        <img class="card__image" src="images/zakat.png" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Гора Эльбрус</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-
-      <div class="card">
-        <img class="card__image" src="images/forest.png" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Домбай</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-
-      <div class="card">
-        <img class="card__image" src="images/zamok.jpg" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Карачаевск</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-
-      <div class="card">
-        <img class="card__image" src="images/zamok.jpg" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Карачаевск</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-
-      <div class="card">
-        <img class="card__image" src="images/zamok.jpg" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Карачаевск</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-    </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">© 2022 Mesto Russia</p>
