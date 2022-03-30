@@ -85,8 +85,8 @@ const initialCards = [
   }
 ];
 
-const imageName = document.querySelector('.image__name')
-const image = document.querySelector('.popup__photo_title');
+const imageName = document.querySelector('.popup__image-title')
+const image = document.querySelector('.popup__image');
 const popupPhoto = document.querySelector('.popup_photo');
 const popupClosePhoto = document.querySelector('.popup__off');
 const popupButtonSaveCard = document.querySelector('.popup__button_save_card');
