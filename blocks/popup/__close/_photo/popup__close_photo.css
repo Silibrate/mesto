@@ -1,11 +1,10 @@
 .popup__close_photo {
-  background-color: #000000;
   padding: 0;
   width: 32px;
   height: 32px;
   border: none;
   background: none;
-  background-image: url('../../images/CloseIcon.svg');
+  background-image: url('../../../../images/CloseIcon.svg');
   background-repeat: no-repeat;
   margin-left: 97%;
   cursor: pointer;
@@ -15,7 +14,7 @@
   .popup__close_photo {
     width: 20px;
     height: 20px;
-    background-image: url('../../images/CloseIconmin.svg');
+    background-image: url('../../../../images/CloseIconmin.svg');
   }
 }
 
