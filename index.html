@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="pages/index.css">
+  <link rel="stylesheet" href="pages/index.css">
 
   <title>Mesto</title>
 </head>
@@ -19,83 +19,76 @@
   <main class="page">
     <section class="profile">
       <img class="profile__image" src="images/image.jpg" alt="Аватарка">
-       <div class="profile__conteiner">
-      <div class="profile__info">
-        <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <button class="profile__button-edit" type="button"></button>
-        <p class="profile__subtitle">Исследователь океана</p>
+      <div class="profile__conteiner">
+        <div class="profile__info">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <button class="profile__button-edit" type="button"></button>
+          <p class="profile__subtitle">Исследователь океана</p>
+        </div>
+        <button class="profile__button-full"></button>
       </div>
-      <button class="profile__button-full"></button>
-    </div>
-      <div class="popup popup-edit">
-        <div class="popup__container">
 
-          <div class="popup__content">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" name="register">
-              <button class="popup__close" type="button"></button>
-              <input type="text" placeholder="Имя" class="popup__input-name" name="username">
-              <input type="text" placeholder="Деятельность" class="popup__input-name popup__input-name_type_user-job" name="userjob">
-              <button class="popup__button" type="submit">Сохранить</button>
-            </form>
-          </div>
+
+    </section>
+    <section class="cards">
+    </section>
+    <template class="template">
+      <div class="card">
+        <button class="card__button_trash"></button>
+        <img class="card__image" src="#" alt="crash">
+        <div class="card__conteiner">
+          <h2 class="card__title"></h2>
+          <button class="card__button card__button_type_close" type="submit"></button>
         </div>
       </div>
-    </section>
+    </template>
 
-    <section class="cards">
-      <div class="card">
-        <img class="card__image" src="images/zamok.jpg" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Карачаевск</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-
-      <div class="card">
-        <img class="card__image" src="images/zakat.png" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Гора Эльбрус</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-
-      <div class="card">
-        <img class="card__image" src="images/forest.png" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Домбай</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-
-      <div class="card">
-        <img class="card__image" src="images/zamok.jpg" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Карачаевск</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-
-      <div class="card">
-        <img class="card__image" src="images/zamok.jpg" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Карачаевск</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-
-      <div class="card">
-        <img class="card__image" src="images/zamok.jpg" alt="Замок">
-        <div class="card__conteiner">
-        <h2 class="card__title">Карачаевск</h2>
-        <button class="card__button card__button_type_close" type="submit"></button>
-      </div>
-      </div>
-    </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">© 2022 Mesto Russia</p>
   </footer>
+
+  <div class="popup popup-edit">
+    <div class="popup__container">
+      <div class="popup__content">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__form" name="register">
+          <button class="popup__close" type="button"></button>
+          <input type="text" placeholder="Имя" class="popup__input-name" name="username">
+          <input type="text" placeholder="Деятельность" class="popup__input-name popup__input-name_type_user-job"
+            name="userjob">
+          <button class="popup__button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup popup-add">
+    <div class="popup__container">
+      <div class="popup__content">
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form popup__form_create" name="create">
+          <button class="popup__close popup__close_add" type="button"></button>
+          <input type="text" placeholder="Название" class="popup__input-title popup__input-title_card" name="cardname">
+          <input type="text" placeholder="Ссылка на картинку" class="popup__input-title popup__input-name_type_link"
+            name="photo">
+          <button class="popup__button popup__button_save_card" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup popup_photo">
+    <div class="popup__container">
+      <div class="popup__items">
+        <button class="popup__close_photo" type="button"></button>
+        <figure>
+        <img class="popup__image" src="#" alt="crash">
+        <figcaption class="image__name"></figcaption>
+      </figure>
+      </div>
+    </div>
+  </div>
 
   <script src="scripts/script.js"></script>
 </body>
