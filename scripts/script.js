@@ -91,7 +91,7 @@ const popupPhoto = document.querySelector('.popup_photo');
 const popupClosePhoto = document.querySelector('.popup__off');
 const popupButtonSaveCard = document.querySelector('.popup__button_save_card');
 const popupInputTitleCard = document.querySelector('.popup__input-title_card');
-const popupInputTypeLink = document.querySelector('.popup__input_type_link');
+const popupInputTypeLink = document.querySelector('#popup__input_type_link');
 const templateCard = document.querySelector('.template').content;
 const cards = document.querySelector('.cards');
 
