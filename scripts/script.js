@@ -86,12 +86,12 @@ const initialCards = [
 ];
 
 const imageName = document.querySelector('.image__name')
-const image = document.querySelector('.popup__image');
+const image = document.querySelector('.popup__photo_title');
 const popupPhoto = document.querySelector('.popup_photo');
-const popupClosePhoto = document.querySelector('.popup__close_photo');
+const popupClosePhoto = document.querySelector('.popup__off');
 const popupButtonSaveCard = document.querySelector('.popup__button_save_card');
 const popupInputTitleCard = document.querySelector('.popup__input-title_card');
-const popupInputNameTypeLink = document.querySelector('.popup__input-name_type_link');
+const popupInputTypeLink = document.querySelector('.popup__input_type_link');
 const templateCard = document.querySelector('.template').content;
 const cards = document.querySelector('.cards');
 
@@ -139,9 +139,9 @@ initialCards.forEach(function (item) {
 
 function cardSubmit(evt) {
   evt.preventDefault();
-  cards.prepend(createCards(popupInputTitleCard.value, popupInputNameTypeLink.value));
+  cards.prepend(createCards(popupInputTitleCard.value, popupInputTypeLink.value));
   popupInputTitleCard.value = "";
-  popupInputNameTypeLink.value = "";
+  popupInputTypeLink.value = "";
   buttonCloseFull();
 }
 
