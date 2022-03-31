@@ -34,10 +34,10 @@
     <template class="template">
       <div class="card">
         <button class="card__button_trash"></button>
-        <img class="card__image" src="#" alt="crash">
+        <img class="card__image" src="#" alt="">
         <div class="card__conteiner">
           <h2 class="card__title"></h2>
-          <button class="card__button card__button_type_close" type="submit"></button>
+          <button class="card__button card__button_type_like" type="submit"></button>
         </div>
       </div>
     </template>
@@ -52,7 +52,7 @@
       <div class="popup__content">
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="register">
-          <button class="popup__close" type="button"></button>
+          <button class="popup__close popup__close-edit" type="button"></button>
           <input type="text" placeholder="Имя" class="popup__input-name" name="username">
           <input type="text" placeholder="Деятельность" class="popup__input-name popup__input-name_type_user-job"
             name="userjob">
@@ -80,9 +80,9 @@
   <div class="popup popup_photo">
     <div class="popup__container">
       <div class="popup__items">
-        <button class="popup__off" type="button"></button>
+        <button class="popup__close popup__close_photo" type="button"></button>
         <figure>
-          <img class="popup__image" src="#" alt="crash">
+          <img class="popup__image" src="#" alt="">
           <figcaption class="popup__image-title"></figcaption>
         </figure>
       </div>
