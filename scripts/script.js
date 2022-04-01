@@ -104,13 +104,14 @@ function createCard(name, link) {
     popupImage.src = link;
     popupImage.alt = name;
   });
-  popupClosePhoto.addEventListener('click', () => {
-    closePopup(popupPhoto)
-  });
   return element;
 }
 
-function cardSubmit(evt) {
+popupClosePhoto.addEventListener('click', () => {
+  closePopup(popupPhoto)
+});
+
+function submitСard(evt) {
   evt.preventDefault();
   cards.prepend(createCard(popupInputTitleCard.value, popupInputTypeLink.value));
   popupInputTitleCard.value = '';
@@ -118,7 +119,7 @@ function cardSubmit(evt) {
   closePopup(popupAdd);
 }
 
-popupFormCreate.addEventListener('submit', cardSubmit);
+popupFormCreate.addEventListener('submit', submitСard);
 
 initialCards.forEach((item) => {
   cards.prepend(createCard(item.name, item.link))
