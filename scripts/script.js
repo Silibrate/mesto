@@ -17,7 +17,7 @@ const popupImage = document.querySelector('.popup__image');
 const popupImageTitle = document.querySelector('.popup__image-title');
 const popupClosePhoto = document.querySelector('.popup__close_photo');
 const popupInputTitleCard = document.querySelector('.popup__input-title_card');
-const popupInputTypeLink = document.querySelector('.popup__input_type_link');
+const popupInputTypeLink = document.querySelector('.popup__input_type-link');
 const popupFormCreate = document.querySelector('.popup__form_create');
 const popupButtonSaveCard = document.querySelector('.popup__button_save_card');
 
