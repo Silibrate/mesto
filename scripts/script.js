@@ -1,4 +1,29 @@
-const popups = document.querySelectorAll('.popup');
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
 const profileButtonEdit = document.querySelector('.profile__button-edit');
 const profileButtonFull = document.querySelector('.profile__button-full');
 const popupAdd = document.querySelector('.popup-add');
@@ -23,20 +48,19 @@ const popupButtonSaveCard = document.querySelector('.popup__button_save_card');
 
 function escapePopup(evt) {
   if (evt.key === 'Escape') {
-    const popupOpened = document.querySelector('.popup_open');
+    const popupOpened = document.querySelector('.popup_opened');
     closePopup(popupOpened);
   }
-  evt.target.removeEventListener('keydown', escapePopup);
 }
 
 function openPopup(popup) {
-  popup.classList.add('popup_open');
+  popup.classList.add('popup_opened');
   document.addEventListener('keydown', escapePopup);
   popup.addEventListener('click', closeOverlay);
 }
 
 function closePopup(popup) {
-  popup.classList.remove('popup_open');
+  popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', escapePopup);
   popup.removeEventListener('click', closeOverlay);
 }
@@ -68,33 +92,6 @@ function handleProfileFormSubmit(evt) {
   closePopup(popupEdit);
 }
 profileForm.addEventListener('submit', handleProfileFormSubmit);
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
 
 function createCard(name, link) {
   const element = cardTemplate.querySelector('.card').cloneNode(true);
