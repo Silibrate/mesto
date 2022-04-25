@@ -26,13 +26,13 @@ const validateInput = (input) => {
   errorElement.textContent = input.validationMessage;
 }
 
-const setButtonState = (button, isValid) => {
+const setButtonState = (button, isValid,inactiveButtonClass) => {
   if (isValid) {
     button.disabled = false;
-    button.classList.remove(selectorsValid.inactiveButtonClass);
+    button.classList.remove(inactiveButtonClass);
   } else {
     button.disabled = true;
-    button.classList.add(selectorsValid.inactiveButtonClass);
+    button.classList.add(inactiveButtonClass);
   }
 }
 
@@ -41,7 +41,7 @@ const handleInput = (event) => {
   const input = event.target;
   const submitButton = currentForm.querySelector(selectorsValid.submitButtonSelector);
   validateInput(input);
-  setButtonState(submitButton, currentForm.checkValidity());
+  setButtonState(submitButton, currentForm.checkValidity(),selectorsValid.inactiveButtonClass);
   if (input.validationMessage) {
     input.classList.add(selectorsValid.inputErrorClass);
   } else {
@@ -57,12 +57,13 @@ const handleSubmit = (event) => {
   }
 }
 
-const enableValidation = () => {
-  const forms = Array.from(document.querySelectorAll(selectorsValid.formSelector));
+const enableValidation = (formSelector) => {
+  const forms = Array.from(document.querySelectorAll(formSelector));
   forms.forEach((formElement) => {
     formElement.addEventListener('submit', handleSubmit);
     formElement.addEventListener('input', handleInput);
     console.log(formElement)
   })
 }
-enableValidation();
+enableValidation(selectorsValid.formSelector);
+
