@@ -26,13 +26,13 @@ const validateInput = (input) => {
   errorElement.textContent = input.validationMessage;
 }
 
-const setButtonState = (button, isValid,inactiveButtonClass) => {
+const setButtonState = (button, isValid,selectorsValid) => {
   if (isValid) {
     button.disabled = false;
-    button.classList.remove(inactiveButtonClass);
+    button.classList.remove(selectorsValid.inactiveButtonClass);
   } else {
     button.disabled = true;
-    button.classList.add(inactiveButtonClass);
+    button.classList.add(selectorsValid.inactiveButtonClass);
   }
 }
 
@@ -41,7 +41,7 @@ const handleInput = (event) => {
   const input = event.target;
   const submitButton = currentForm.querySelector(selectorsValid.submitButtonSelector);
   validateInput(input);
-  setButtonState(submitButton, currentForm.checkValidity(),selectorsValid.inactiveButtonClass);
+  setButtonState(submitButton, currentForm.checkValidity(),selectorsValid);
   if (input.validationMessage) {
     input.classList.add(selectorsValid.inputErrorClass);
   } else {
@@ -65,5 +65,6 @@ const enableValidation = (formSelector) => {
     console.log(formElement)
   })
 }
+
 enableValidation(selectorsValid.formSelector);
 
