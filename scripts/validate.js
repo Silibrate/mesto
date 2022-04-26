@@ -1,6 +1,6 @@
 const selectorsValid = {
   formSelector: '.popup__form',
-  inputSelector: '.popup__input-name',
+  inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__input-name_error',
@@ -26,26 +26,26 @@ const validateInput = (input) => {
   errorElement.textContent = input.validationMessage;
 }
 
-const setButtonState = (button, isValid,selectorsValid) => {
+const setButtonState = (button, isValid,config) => {
   if (isValid) {
     button.disabled = false;
-    button.classList.remove(selectorsValid.inactiveButtonClass);
+    button.classList.remove(config.inactiveButtonClass);
   } else {
     button.disabled = true;
-    button.classList.add(selectorsValid.inactiveButtonClass);
+    button.classList.add(config.inactiveButtonClass);
   }
 }
 
-const handleInput = (event) => {
+const handleInput = (event,config) => {
   const currentForm = event.currentTarget;
   const input = event.target;
-  const submitButton = currentForm.querySelector(selectorsValid.submitButtonSelector);
+  const submitButton = currentForm.querySelector(config.submitButtonSelector);
   validateInput(input);
-  setButtonState(submitButton, currentForm.checkValidity(),selectorsValid);
+  setButtonState(submitButton, currentForm.checkValidity(),config);
   if (input.validationMessage) {
-    input.classList.add(selectorsValid.inputErrorClass);
+    input.classList.add(config.inputErrorClass);
   } else {
-    input.classList.remove(selectorsValid.inputErrorClass);
+    input.classList.remove(config.inputErrorClass);
   }
 }
 
@@ -57,14 +57,15 @@ const handleSubmit = (event) => {
   }
 }
 
-const enableValidation = (formSelector) => {
-  const forms = Array.from(document.querySelectorAll(formSelector));
+
+
+const enableValidation = (config) => {
+  const forms = Array.from(document.querySelectorAll(config.formSelector));
   forms.forEach((formElement) => {
-    formElement.addEventListener('submit', handleSubmit);
-    formElement.addEventListener('input', handleInput);
-    console.log(formElement)
+      formElement.addEventListener('submit', handleSubmit);
+      formElement.addEventListener('input', (evt) => handleInput(evt, config));
   })
 }
 
-enableValidation(selectorsValid.formSelector);
+enableValidation(selectorsValid);
 

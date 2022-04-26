@@ -53,9 +53,9 @@
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="register" novalidate>
           <button class="popup__close popup__close-edit" type="button"></button>
-          <input type="text" placeholder="Имя" class="popup__input-name " name="username" id="name" minlength="2" maxlength="40" required>
+          <input type="text" placeholder="Имя" class="popup__input popup__input-name " name="username" id="name" minlength="2" maxlength="40" required>
           <span class="error name-error" id="errorname"></span>
-          <input type="text" placeholder="Деятельность" class="popup__input-name popup__input-name_type_user-job" id="job"
+          <input type="text" placeholder="Деятельность" class="popup__input popup__input-name popup__input-name_type_user-job" id="job"
             name="userjob" minlength="2" maxlength="200" required>
             <span class="error job-error" id="errorjob"></span>
           <button class="popup__button " type="submit">Сохранить</button>
@@ -70,9 +70,9 @@
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form popup__form_create" name="create" novalidate>
           <button class="popup__close popup__close_add" type="button"></button>
-          <input type="text" placeholder="Название" class="popup__input-title popup__input-title_card " name="cardname" id="card-name" required minlength="2" maxlength="30">
+          <input type="text" placeholder="Название" class="popup__input popup__input-title popup__input-title_card " name="cardname" id="card-name" required minlength="2" maxlength="30">
           <span class="error card-name-error" id="card-name-error"></span>
-          <input type="url" placeholder="Ссылка на картинку" class="popup__input-title popup__input-title_type-link" id="link"
+          <input type="url" placeholder="Ссылка на картинку" class="popup__input] popup__input-title popup__input-title_type-link" id="link"
             name="photo" required>
           <span class="error link-error" id="card_title"></span>
           <button class="popup__button popup__button_save_card" type="submit">Создать</button>
