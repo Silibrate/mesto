@@ -1,3 +1,6 @@
+import {Card} from './Card.js';
+import {FormValidator} from './FormValidator.js';
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -24,6 +27,7 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
 const profileButtonEdit = document.querySelector('.profile__button-edit');
 const profileButtonFull = document.querySelector('.profile__button-full');
 const popupAdd = document.querySelector('.popup-add');
@@ -45,6 +49,19 @@ const popupInputTitleCard = document.querySelector('.popup__input-title_card');
 const popupInputTypeLink = document.querySelector('.popup__input-title_type-link');
 const popupFormCreate = document.querySelector('.popup__form_create');
 const popupButtonSaveCard = document.querySelector('.popup__button_save_card');
+const selectorsValid = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input-name_error',
+};
+const editUserForm = document.forms.register;
+const createCardForm = document.forms.create;
+const ERRORS = {
+  empty: 'Вы пропустили это поле',
+  wrongUrl: 'Введите адрес сайта',
+}
 
 function escapePopup(evt) {
   if (evt.key === 'Escape') {
@@ -93,63 +110,36 @@ function handleProfileFormSubmit(evt) {
 }
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
-function createCard(name, link) {
-  const element = cardTemplate.querySelector('.card').cloneNode(true);
-  const cardPhoto = element.querySelector('.card__image');
-  const cardTitle = element.querySelector('.card__title');
-  cardPhoto.src = link;
-  cardPhoto.alt = name;
-  cardTitle.textContent = name;
-  const cardButtonTrash = element.querySelector('.card__button_trash');
-  cardButtonTrash.addEventListener('click', (evt) => {
-    evt.target.closest('.card').remove();
-  })
-  element
-    .querySelector('.card__button_type_like')
-    .addEventListener('click', (evt) => {
-      evt.target.classList.toggle('card__button_type_on');
-    })
-  cardPhoto.addEventListener('click', () => {
-    openPopup(popupPhoto);
-    popupImageTitle.textContent = name;
-    popupImage.src = link;
-    popupImage.alt = name;
-  });
-  return element;
-}
-
-popupClosePhoto.addEventListener('click', () => {
-  closePopup(popupPhoto)
-});
-
-function submitСard(evt) {
-  evt.preventDefault();
-  console.log(popupInputTypeLink.value);
-  cards.prepend(createCard(popupInputTitleCard.value, popupInputTypeLink.value));
-  popupInputTitleCard.value = '';
-  popupInputTypeLink.value = '';
-  closePopup(popupAdd);
-
-}
-
-popupFormCreate.addEventListener('submit', submitСard);
-
-initialCards.forEach((item) => {
-  cards.prepend(createCard(item.name, item.link))
-})
-
-const editUserForm = document.forms.register;
-const createCardForm = document.forms.create;
-const ERRORS = {
-  empty: 'Вы пропустили это поле',
-  wrongUrl: 'Введите адрес сайта',
-}
-
-
-
 function closeOverlay(event) {
   if (event.target.querySelector('.popup__content') || event.target.querySelector('.popup__items')) {
     closePopup(event.target.closest('.popup'));
     console.log(event.target.className);
   }
 }
+
+initialCards.forEach((item) => {
+  const card = new Card(item, ".template");
+  const cardElement = card.generateCard();
+  cards.prepend(cardElement);
+});
+
+function submitСard(e) {
+  e.preventDefault();
+  const cartInfo = {
+    name: popupInputTitleCard.value,
+    link: popupInputTypeLink.value,
+  }
+  const userCard = new Card(cartInfo, ".template");
+  const userCardElement = userCard.generateCard();
+  cards.prepend(userCardElement);
+  popupInputTitleCard.value = '';
+  popupInputTypeLink.value = '';
+  closePopup(popupAdd);
+}
+
+popupFormCreate.addEventListener('submit', submitСard);
+
+const userForm = new FormValidator(selectorsValid, editUserForm);
+const cardForm = new FormValidator(selectorsValid, createCardForm);
+userForm.enableValidation();
+cardForm.enableValidation();
