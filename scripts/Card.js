@@ -1,4 +1,7 @@
-export  class Card {
+
+import { openImage } from './index.js';
+
+export class Card {
   #element;
   #link;
   #name;
@@ -29,6 +32,14 @@ export  class Card {
     return this.#element
   }
 
+  #openImage() {
+    openImage(this.#name,this.#link)
+  }
+
+  #handleLikeClick() {
+    this.#element.querySelector('.card__button_type_like').classList.toggle('card__button_type_on');
+  }
+
   #setEventListeners() {
     this.#element.querySelector('.card__button_type_like').addEventListener('click', () => {
       this.#handleLikeClick();
@@ -38,19 +49,8 @@ export  class Card {
     })
     this.#element.querySelector('.card__image').addEventListener('click', () => {
       this.#openImage();
+
     })
 
   }
-
-  #handleLikeClick() {
-    this.#element.querySelector('.card__button_type_like').classList.toggle('card__button_type_on');
-  }
-
-  #openImage() {
-    openPopup(popupPhoto);
-    document.querySelector('.popup__image-title').textContent = this.#name;
-    popupImage.src = this.#link;
-    popupImage.alt = this.#name;
-  }
-
 }

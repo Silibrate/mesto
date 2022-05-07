@@ -1,5 +1,5 @@
-import {Card} from './Card.js';
-import {FormValidator} from './FormValidator.js';
+import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
 
 const initialCards = [
   {
@@ -102,6 +102,8 @@ popupCloseAdd.addEventListener('click', () => {
   closePopup(popupAdd);
 });
 
+
+
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileSubtitle.textContent = popupInputNameTypeUserJob.value;
@@ -135,6 +137,16 @@ function submitСard(e) {
   popupInputTitleCard.value = '';
   popupInputTypeLink.value = '';
   closePopup(popupAdd);
+}
+
+export function openImage(name, link) {
+  openPopup(popupPhoto);
+  document.querySelector('.popup__image-title').textContent = name;
+  popupImage.src = link;
+  popupImage.alt = name;
+  popupClosePhoto.addEventListener('click',()=>{
+    closePopup(popupPhoto);
+  })
 }
 
 popupFormCreate.addEventListener('submit', submitСard);
