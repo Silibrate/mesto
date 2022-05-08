@@ -1,10 +1,14 @@
-export  class FormValidator {
+import { ERRORS } from './index.js'
+
+export class FormValidator {
   #object;
   #form;
+  #button;
 
-  constructor(object, form) {
+  constructor(object, form, button) {
     this.#object = object;
     this.#form = form;
+    this.#button = button;
   }
   #checkInputValidity(input) {
     input.setCustomValidity('');
@@ -26,22 +30,21 @@ export  class FormValidator {
     errorElement.textContent = input.validationMessage;
   }
 
-  #setButtonState = (button, isValid) => {
+  setButtonState = (isValid) => {
     if (isValid) {
-      button.disabled = false;
-      button.classList.remove(this.#object.inactiveButtonClass);
+      this.#button.disabled = false;
+      this.#button.classList.remove(this.#object.inactiveButtonClass);
     } else {
-      button.disabled = true;
-      button.classList.add(this.#object.inactiveButtonClass);
+      this.#button.disabled = true;
+      this.#button.classList.add(this.#object.inactiveButtonClass);
     }
   }
 
   #handleInput = (event) => {
     const currentForm = this.#form;
     const input = event.target;
-    const submitButton = currentForm.querySelector(this.#object.submitButtonSelector);
     this.#validateInput(input);
-    this.#setButtonState(submitButton, currentForm.checkValidity());
+    this.setButtonState(currentForm.checkValidity());
     if (input.validationMessage) {
       input.classList.add(this.#object.inputErrorClass);
     } else {
