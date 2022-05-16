@@ -1,16 +1,18 @@
 
-import { openImage } from './index.js';
-
 export class Card {
   #element;
   #link;
   #name;
   #cardSelector;
+  #data;
+  #handleCardClick;
 
-  constructor(data, cardSelector) {
-    this.#link = data.link;
-    this.#name = data.name;
+  constructor({ data, handleCardClick }, cardSelector) {
+    this.#data = data;
+    this.#link = this.#data.link;
+    this.#name = this.#data.name;
     this.#cardSelector = cardSelector;
+    this.#handleCardClick = handleCardClick;
   }
 
   #getTemplate() {
@@ -32,10 +34,6 @@ export class Card {
     return this.#element
   }
 
-  #openImage() {
-    openImage(this.#name,this.#link)
-  }
-
   #handleLikeClick() {
     this.#element.querySelector('.card__button_type_like').classList.toggle('card__button_type_on');
   }
@@ -48,7 +46,7 @@ export class Card {
       e.target.closest('.card').remove();
     })
     this.#element.querySelector('.card__image').addEventListener('click', () => {
-      this.#openImage();
+      this.#handleCardClick();
 
     })
   }
