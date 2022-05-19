@@ -1,6 +1,6 @@
 import Popup from "./Popup.js";
-import { popupImage } from "./index.js";
-import { popupImageTitle } from "./index.js";
+import { popupImage } from "../utils/constants.js";
+import { popupImageTitle } from "../utils/constants.js";
 
 export default class PopupWithImage extends Popup {
   #link;

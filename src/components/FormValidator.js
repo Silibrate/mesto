@@ -1,4 +1,4 @@
-import { ERRORS } from './index.js'
+import { ERRORS } from '../utils/constants.js'
 
 export class FormValidator {
   #object;
@@ -55,7 +55,7 @@ export class FormValidator {
   #handleSubmit = (event) => {
     event.preventDefault();
     const currentForm = event.target
-    if (currentForm.checkValidity()) {
+     if (currentForm.checkValidity()) {
       currentForm.reset();
     }
   }

@@ -16,6 +16,7 @@ export default class PopupWithForm extends Popup {
       formValues[imput.name]=imput.value;
     });
     return formValues;
+    //Сделалк идиально  по заданию только не понил зачем это
   }
 
   close() {

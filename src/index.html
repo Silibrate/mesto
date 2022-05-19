@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="pages/index.css">
+  <!-- <link rel="stylesheet" href="pages/index.css"> -->
 
   <title>Mesto</title>
 </head>
@@ -13,17 +13,17 @@
 <body class="body">
 
   <header class="header">
-    <img class="header__logo" src="images/Vector.svg" alt="Лого">
+    <img class="header__logo" src="<%=require('./images/Vector.svg')%>" alt="Лого">
   </header>
 
   <main class="page">
     <section class="profile">
-      <img class="profile__image" src="images/image.jpg" alt="Аватарка">
+      <img class="profile__image" src="<%=require('./images/image.jpg')%>" alt="Аватарка">
       <div class="profile__conteiner">
         <div class="profile__info">
-          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <h1 class="profile__title"></h1>
           <button class="profile__button-edit" type="button"></button>
-          <p class="profile__subtitle">Исследователь океана</p>
+          <p class="profile__subtitle"></p>
         </div>
         <button class="profile__button-full"></button>
       </div>
@@ -94,9 +94,9 @@
     </div>
   </div>
 
-  <script type="module" src="./scripts/index.js"></script>
+  <!-- <script type="module" src="./scripts/index.js"></script>
   <script type="module" src="./scripts/Card.js"></script>
-  <script type="module" src="./scripts/FormValidator.js"></script>
+  <script type="module" src="./scripts/FormValidator.js"></script> -->
 
 </body>
 

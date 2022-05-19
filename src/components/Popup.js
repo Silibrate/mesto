@@ -18,7 +18,6 @@ export default class Popup {
   #closeOverlay(event) {
     if (event.target.querySelector('.popup__content') || event.target.querySelector('.popup__items')) {
       this.close();
-      console.log(event.target.className);
     }
   }
 
