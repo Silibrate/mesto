@@ -1,5 +1,5 @@
 import "./index.css";
-import { profileButtonEdit, profileButtonFull, popupCloseAdd, popupInputName, popupInputNameTypeUserJob, profileSubtitle, profileTitle, popupCloseEdit, cards, selectorsValid, editUserForm, createCardForm, initialCards } from "../utils/constants.js"
+import { profileButtonEdit, profileButtonFull, popupCloseAdd, popupInputName, popupInputNameTypeUserJob, popupCloseEdit, cards, selectorsValid, editUserForm, createCardForm, initialCards } from "../utils/constants.js"
 import { Card } from '../components/Card.js';
 import { FormValidator } from '../components/FormValidator.js';
 import Section from '../components/Section.js';
@@ -12,14 +12,13 @@ const cartPopup = new PopupWithForm({ popupSelector: '.popup-add', callbackSubmi
 cartPopup.setEventListeners();
 editPopup.setEventListeners();
 
-const profilInfo = new UserInfo({ name: profileTitle, job: profileSubtitle });
+const profilInfo = new UserInfo({ name: '.profile__title', job: '.profile__subtitle' });
 
-profileTitle.textContent = "Жак-Ив Кусто";
-profileSubtitle.textContent = "Исследователь океана";
 
 profileButtonEdit.addEventListener('click', () => {
   editPopup.open();
-  profilInfo.getUserInfo(popupInputName, popupInputNameTypeUserJob);
+  popupInputName.value = profilInfo.getUserInfo().title;
+  popupInputNameTypeUserJob.value = profilInfo.getUserInfo().subtitle;
 });
 
 popupCloseEdit.addEventListener('click', () => {
