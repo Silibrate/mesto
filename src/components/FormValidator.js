@@ -5,14 +5,14 @@ export class FormValidator {
   #form;
   #button;
 
-  constructor(object, form, button) {
+  constructor(object, form) {
     this.#object = object;
     this.#form = form;
-    this.#button = button;
+    this.#button = this.#form.querySelector(this.#object.submitButtonSelector);
   }
+
   #checkInputValidity(input) {
     input.setCustomValidity('');
-    console.log(input.validity);
     if (input.validity.valueMissing) {
       input.setCustomValidity(ERRORS.empty)
       return false;
@@ -55,7 +55,7 @@ export class FormValidator {
   #handleSubmit = (event) => {
     event.preventDefault();
     const currentForm = event.target
-     if (currentForm.checkValidity()) {
+    if (currentForm.checkValidity()) {
       currentForm.reset();
     }
   }

@@ -43,7 +43,7 @@ export class Card {
       this.#handleLikeClick();
     });
     this.#element.querySelector('.card__button_trash').addEventListener('click', (e) => {
-      e.target.closest('.card').remove();
+      this.#element.remove();
     })
     this.#element.querySelector('.card__image').addEventListener('click', () => {
       this.#handleCardClick();
