@@ -1,7 +1,11 @@
-export const popupButtonSaveCard = document.querySelector('.popup__button_save_card');
-export const popupButtonDeleteCard = document.querySelector('.popup__button_delete_card');
-export const popupButtonEdit = document.querySelector('.popup__button-edit');
-export const popupButtonSaveAvatar = document.querySelector('.popup__button_save_avatar');
+export const formaRendLoad = {
+  normal: 'Сохранение...',
+  finally: 'Сохранить'
+}
+export const deleteRendLoad = {
+  normal: 'удаление...',
+  finally: 'да'
+}
 export const profileAvatarConteiner = document.querySelector('.profile__avatar-conteiner');
 export const profileTitle = document.querySelector('.profile__title');
 export const profileSubtitle = document.querySelector('.profile__subtitle')

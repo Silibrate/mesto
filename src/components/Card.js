@@ -1,8 +1,5 @@
 
 export class Card {
-
-  #link;
-  #name;
   #cardSelector;
   #handleCardClick;
   #uzerId
@@ -10,10 +7,8 @@ export class Card {
   #handleLikeClick;
   #isLike;
   #handleLikeClickDrop;
-  constructor({ data, handleCardClick, handleDeleteClick }, handleLikeClick, handleLikeClickDrop, uzerId, deleteCard, cardSelector) {
+  constructor({ data, handleCardClick, handleDeleteClick }, handleLikeClick, handleLikeClickDrop, uzerId, cardSelector) {
     this._data = data;
-    this.#link = this._data.link;
-    this.#name = this._data.name;
     this.#cardSelector = cardSelector;
     this.#handleCardClick = handleCardClick;
     this.#uzerId = uzerId
@@ -37,6 +32,11 @@ export class Card {
     this._element = null;
   }
 
+  changeLikeStatus(likes) {
+    this._element.querySelector('.card__button_type_like').classList.toggle('card__button_type_on');
+    this._element.querySelector(".card__likes__statistics").textContent = likes;
+  }
+
   #likeOn() {
     if (!this.#isLike) {
       this.#handleLikeClick(this);
@@ -51,8 +51,8 @@ export class Card {
     this._element = this.#getTemplate();
     const cardImage = this._element.querySelector('.card__image');
     this._element.querySelector('.card__likes__statistics').textContent = this._data.likes.length;
-    cardImage.src = this.#link;
-    cardImage.alt = this.#name;
+    cardImage.src = this._data.link;
+    cardImage.alt = this._data.name;
     this._data.likes.forEach(element => {
       if (element._id === this.#uzerId) {
         this._element.querySelector('.card__button_type_like').classList.toggle('card__button_type_on');
@@ -62,7 +62,7 @@ export class Card {
     if (this._data.owner._id !== this.#uzerId) {
       this._element.querySelector('.card__button_trash').style = 'display:none'
     }
-    this._element.querySelector('.card__title').textContent = this.#name;
+    this._element.querySelector('.card__title').textContent = this._data.name;
     this.#setEventListeners();
     return this._element
   }

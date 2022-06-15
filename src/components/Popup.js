@@ -23,6 +23,13 @@ export default class Popup {
     }
   }
 
+  renderLoading(saved) {
+    const inactiveButtonClass = 'popup__button_disabled';
+    const button = this.#popup.querySelector('.popup__button');
+    button.classList.toggle(inactiveButtonClass);
+    button.textContent = saved;
+  }
+
   setEventListeners() {
 
     this.#popup.addEventListener('click', this.#closeOverlay.bind(this));
