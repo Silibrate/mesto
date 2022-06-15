@@ -1,3 +1,10 @@
+export const popupButtonSaveCard = document.querySelector('.popup__button_save_card');
+export const popupButtonDeleteCard = document.querySelector('.popup__button_delete_card');
+export const popupButtonEdit = document.querySelector('.popup__button-edit');
+export const popupButtonSaveAvatar = document.querySelector('.popup__button_save_avatar');
+export const profileAvatarConteiner = document.querySelector('.profile__avatar-conteiner');
+export const profileTitle = document.querySelector('.profile__title');
+export const profileSubtitle = document.querySelector('.profile__subtitle')
 export const profileButtonEdit = document.querySelector('.profile__button-edit');
 export const profileButtonFull = document.querySelector('.profile__button-full');
 export const popupCloseAdd = document.querySelector('.popup__close_add');
@@ -12,8 +19,10 @@ export const selectorsValid = {
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__input-name_error',
 };
+export const createAvatarForm = document.forms.avatar;
 export const editUserForm = document.forms.register;
 export const createCardForm = document.forms.create;
+
 export const ERRORS = {
   empty: 'Вы пропустили это поле',
   wrongUrl: 'Введите адрес сайта',

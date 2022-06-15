@@ -19,5 +19,4 @@ export default class Section {
     this.#container.prepend(element)
   }
 
-
 }
