@@ -1,5 +1,12 @@
 
 export class Card {
+
+  /*  я не понял замечание по лишним переменным, что вы считаете тут лишним и не нужным.
+  https://cdn.discordapp.com/attachments/815387318118121523/986888123650814052/Screenshot_28.png
+  https://cdn.discordapp.com/attachments/815387318118121523/986888123847950346/Screenshot_29.png
+
+  Если для вас объявление через #лишнее то без него нелязя делать приватный метот
+  */
   #cardSelector;
   #handleCardClick;
   #uzerId
